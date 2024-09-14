@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: antiquewhite;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+.header{
+    width:100%;
+    height: 50px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+    margin-left: 20px;
+    font-size: 30px;
+    line-height: 30px;
+    padding:12px;
+}
+span{
+    color: rgb(126, 126, 12);
+}
+.menu-li{
+    list-style: none;
+    float: left;
+    /* có này để nó vẫn thuộc phần cha và ko bị di chuyển (relative:cha, absolute:con) */
+    position:relative;
+}
+.menu-link{
+    text-decoration: none;
+    padding: 0 15px 0 15px;
+    line-height: 50px;
+    /* cho phần khung chiếm toàn bộ khi hover */
+    display: block;
+    transition: ease-in 0.6s;
+}
+.menu-li > a:hover{
+    background-color: orange;
+}
+.dropdown-menu-total{
+    display:none;
+}
+.menu-li:hover .dropdown-menu-total{
+    display: block;
+    position:absolute;
+    min-height: 100px;
+    background-color: aqua;
+    top:100%;
+    left:0;
+}
+.dropdown-menu-total ul {
+    display: block;
+    list-style: none;
+}
+.dropdown-menu-total ul li{
+    width:200px;
+}
+.submenu-link{
+    text-decoration: none;
+    /* thẻ a lun có display:block */
+    display: block;
+    border-top: 1px solid #ccc;
+    line-height:40px;
+    /* tạo khoảng cách của chữ (thụt vào)*/
+    text-indent: 10px;
+    left:0;
+}
+ul.menu > li:hover .submenu {
+    display:block;
+}
+.submenu-link:hover{
+    background: orange;
+    transition: ease-in 0.6s;
+}
+.dropdown-menu{
+    display: none;
+    list-style: none;
+}
+.dropdown-menu-total ul li:hover .dropdown-menu{
+    display: block;
+    position: absolute;
+    top:80px;
+    left:200px;
+    background-color: aqua;
+    text-indent: 10px;  
+}
+.dropdown-menu-total ul li:hover .dropdown-menu ul li:hover{
+    background: orange;
+    transition: ease-in 0.6s;
+}
+.dropdown-menu ul li{
+    border-top: 1px solid #ccc;
+    line-height:40px;
+    
+}
+.submenu-small-link{
+    text-decoration: none;
+}
